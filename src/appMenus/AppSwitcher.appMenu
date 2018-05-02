@@ -52,4 +52,8 @@
         <name>standard__LightningSales</name>
         <type>CustomApplication</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>Einstein_Vision_Admin</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
 </AppMenu>
