@@ -43,12 +43,12 @@
                             </td>
                             <td scope="row" data-label="Dataset Labels">
                                 <aura:iteration items="{!dataset.labelSummary.labels}" var="label">
-                                    {!label.name} ({!label.numExamples})<br></br>
+                                    {!label.name}?({!label.numExamples})<br></br>
                                 </aura:iteration>
                             </td>
                             <td scope="row" data-label="Dataset Models">
                                 <aura:iteration items="{!v.models}" var="model">
-                                    {!model.modelId} ({!model.status} - {!model.progress*100}%)<br></br>
+                                    {!model.modelId}?({!model.status}?-?{!model.progress*100}%)<br></br>
                                 </aura:iteration>
                             </td>
                             <td scope="row" data-label="Actions">

@@ -1,0 +1,46 @@
+<aura:component controller="Einstein_PlaygroundController">
+
+    <aura:attribute name="firstSection" type="String" />
+    
+    このプレイグラウンドはEinstein Platform Servicesをどの様に使うかを体験するためのサンプルショウケースです。こちらは
+    <a href="https://github.com/muenzpraeger/salesforce-einstein-platform-apex/blob/master/LICENSE.md" target="_blank">サポート無しのオープンソースプロジェクト</a>で提供しておりますので、個々の興味と責任で利用して下さい。
+
+    <lightning:accordion activeSectionName="Setup">
+        <lightning:accordionSection name="Setup" label="初期設定情報">
+                <div class="error">
+                    <ul>
+                            <li>- <i>設定 => カスタム設定 => Einstein Settings ("Manage" ボタン)</i> を作成し <strong>Einstein EMail</strong> 
+                                にEinstein Platformにサインアップした際のメールアドレスを入力して下さい。</li>
+                            <li>- 証明書と鍵の管理セクションで鍵を管理します (非推奨ですが、従来の方法としてEinstein Platform file を組織のファイルに保存する方法もあります。
+                                ファイル名を<i>einstein_platform</i>とします)</li>
+                    </ul>
+                </div>
+
+        </lightning:accordionSection>
+        <lightning:accordionSection name="HowTo" label="プレイグラウンドの利用方法">
+            プレイグラウンドを使った場合の一般的なワークフローを紹介します:
+            <ul>
+                <li>- リモートURLからデータセットを作成します。</li>
+                <li>- ラベルが表示されたら、モデルをトレーニングすることが可能になります。</li>
+                <li>- モデルのトレーニングが 100% になれば、予測を実行することが可能になります。</li>
+            </ul>
+            <br /> プレイグラウンドの挙動をビデオで見ることができます(英語)
+            <br />
+            <iframe width="420" height="315" src="https://www.youtube.com/embed/poY8wR0pVks">
+            </iframe>
+        </lightning:accordionSection>
+        <lightning:accordionSection name="Resources" label="リソース">
+            <ul>
+                <li>- <a href="https://einstein.ai" target="_blank">Einstein.AI</a> のドキュメントをご参照下さい。</li>
+                <li>- Einstein_PredictionService Apexクラスを見れば、どのようにモデルをとレーニングすればいいのかや、API利用状況の取得などの方法が理解できます。
+                </li>
+                <li>- <a href="https://trailhead.salesforce.com" target="_blank">Trailhead</a> へ行き <a target="_blank" href="https://trailhead.salesforce.com/en/projects/build-a-cat-rescue-app-that-recognizes-cat-breeds">猫の品種を認識する Cat Rescue アプリケーションの構築</a> 
+                    のハンズオンをやってみましょう。</li>
+            </ul>
+        </lightning:accordionSection>
+        <lightning:accordionSection name="Contribution" label="開発に協力する">プレイグラウンドやApex Wrapperを拡張するアイデアをお持ちの方は
+            <a href="https://github.com/muenzpraeger/salesforce-einstein-platform-apex/blob/master/CONTRIBUTION.md" target="_blank">contribution guidelines</a>(英語) をお読みになって下さい。</lightning:accordionSection>
+    </lightning:accordion>
+
+
+</aura:component>

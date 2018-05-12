@@ -1,5 +1,5 @@
 public class EinsteinVision_Admin {
-    
+
     @AuraEnabled
     public static void createDatasetFromUrl(String zipUrl) {
         System.debug('@@@ createDatasetFromUrl()');
@@ -94,5 +94,5 @@ public class EinsteinVision_Admin {
         }
         return null;
     }
-    
+
 }
