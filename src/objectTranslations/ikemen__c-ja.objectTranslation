@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>イケメン</value>
+    </caseValues>
+    <fields>
+        <label><!-- ExampleCreatedAt --></label>
+        <name>ExampleCreatedAt__c</name>
+    </fields>
+    <fields>
+        <label><!-- ExampleDatasetId --></label>
+        <name>ExampleDatasetId__c</name>
+    </fields>
+    <fields>
+        <label><!-- ExampleId --></label>
+        <name>ExampleId__c</name>
+    </fields>
+    <fields>
+        <label><!-- ExampleLabelId --></label>
+        <name>ExampleLabelId__c</name>
+    </fields>
+    <fields>
+        <label><!-- ExampleLabelName --></label>
+        <name>ExampleLabelName__c</name>
+    </fields>
+    <fields>
+        <label><!-- ExampleNum --></label>
+        <name>ExampleNum__c</name>
+    </fields>
+    <fields>
+        <label><!-- Feedback --></label>
+        <name>Feedback__c</name>
+    </fields>
+    <fields>
+        <label><!-- Judgment --></label>
+        <name>Judgment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Probability01 --></label>
+        <name>Probability01__c</name>
+    </fields>
+    <fields>
+        <label><!-- Probability02 --></label>
+        <name>Probability02__c</name>
+    </fields>
+    <fields>
+        <label><!-- Probability03 --></label>
+        <name>Probability03__c</name>
+    </fields>
+    <fields>
+        <label><!-- label01 --></label>
+        <name>label01__c</name>
+    </fields>
+    <fields>
+        <label><!-- label02 --></label>
+        <name>label02__c</name>
+    </fields>
+    <fields>
+        <label><!-- label03 --></label>
+        <name>label03__c</name>
+    </fields>
+    <fields>
+        <label><!-- modelId --></label>
+        <name>modelId__c</name>
+    </fields>
+    <layouts>
+        <layout>イケメンレイアウト</layout>
+        <sections>
+            <label><!-- Einstein --></label>
+            <section>Einstein</section>
+        </sections>
+        <sections>
+            <label><!-- Feedback --></label>
+            <section>Feedback</section>
+        </sections>
+        <sections>
+            <label><!-- カスタムリンク --></label>
+            <section>カスタムリンク</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>
