@@ -21,6 +21,10 @@
         <type>CustomApplication</type>
     </appMenuItems>
     <appMenuItems>
+        <name>standard__AppLauncher</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
+    <appMenuItems>
         <name>standard__Community</name>
         <type>CustomApplication</type>
     </appMenuItems>
@@ -54,6 +58,10 @@
     </appMenuItems>
     <appMenuItems>
         <name>Einstein_Demo</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>IKEMEN_Judgment</name>
         <type>CustomApplication</type>
     </appMenuItems>
 </AppMenu>
