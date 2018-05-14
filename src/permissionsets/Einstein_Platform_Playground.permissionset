@@ -9,6 +9,14 @@
         <visible>false</visible>
     </applicationVisibilities>
     <applicationVisibilities>
+        <application>IKEMEN_Judgment</application>
+        <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>standard__AppLauncher</application>
+        <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
         <application>standard__Chatter</application>
         <visible>false</visible>
     </applicationVisibilities>
@@ -1591,6 +1599,81 @@
         <field>Task.WhoId</field>
         <readable>false</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ikemen__c.ExampleCreatedAt__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ikemen__c.ExampleDatasetId__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ikemen__c.ExampleId__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ikemen__c.ExampleLabelId__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ikemen__c.ExampleLabelName__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ikemen__c.ExampleNum__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ikemen__c.Feedback__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ikemen__c.Judgment__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ikemen__c.Probability01__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ikemen__c.Probability02__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ikemen__c.Probability03__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ikemen__c.label01__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ikemen__c.label02__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ikemen__c.label03__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ikemen__c.modelId__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Einstein_Platform_Playground</label>
     <recordTypeVisibilities>
@@ -1612,6 +1695,10 @@
     <tabSettings>
         <tab>Playground</tab>
         <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>ikemen__c</tab>
+        <visibility>None</visibility>
     </tabSettings>
     <tabSettings>
         <tab>standard-Asset</tab>
