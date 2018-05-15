@@ -143,7 +143,9 @@ public class EinsteinVision_Admin {
     
     public static Blob getImageBlobFromFile(Id recordId) {
         System.debug('@@@ getImageBlobFromFile()');
-        List<ContentVersion> cv = [SELECT FirstPublishLocationId, VersionData, Id, Title, IsLatest, CreatedDate FROM ContentVersion WHERE FirstPublishLocationId=:recordId AND IsLatest=true ORDER BY CreatedDate DESC];
+        List<ContentDocumentLink> cdl = [SELECT Id, LinkedEntityId, ContentDocumentId, IsDeleted, SystemModstamp, ShareType, Visibility FROM ContentDocumentLink WHERE LinkedEntityId=:recordId];
+        List<ContentDocument> cd = [SELECT Id, LatestPublishedVersionId, PublishStatus, Title FROM ContentDocument WHERE Id=:cdl[0].ContentDocumentId];
+        List<ContentVersion> cv = [SELECT FirstPublishLocationId, VersionData, Id, Title, IsLatest, CreatedDate FROM ContentVersion WHERE Id=:cd[0].LatestPublishedVersionId AND IsLatest=true ORDER BY CreatedDate DESC];
         if (cv.size()>0) {
             System.debug('*** cv.get(0) ' + cv.get(0));
             return cv.get(0).VersionData;
