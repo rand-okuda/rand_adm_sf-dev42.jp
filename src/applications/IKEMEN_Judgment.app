@@ -9,6 +9,8 @@
     <tab>Einstein_Vision_Admin</tab>
     <tab>Einstein_Usage</tab>
     <tab>ikemen__c</tab>
+    <tab>standard-File</tab>
+    <tab>Playground</tab>
     <uiType>Lightning</uiType>
     <utilityBar>IKEMEN_Judgment_UtilityBar</utilityBar>
 </CustomApplication>

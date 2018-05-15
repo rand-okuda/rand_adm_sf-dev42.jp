@@ -221,6 +221,14 @@
     <label>イケメン</label>
     <listViews>
         <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Judgment__c</columns>
+        <columns>label01__c</columns>
+        <columns>Probability01__c</columns>
+        <columns>label02__c</columns>
+        <columns>Probability02__c</columns>
+        <columns>label03__c</columns>
+        <columns>Probability03__c</columns>
         <filterScope>Everything</filterScope>
         <label>すべて選択</label>
     </listViews>
