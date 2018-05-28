@@ -81,6 +81,10 @@
         <visible>true</visible>
     </applicationVisibilities>
     <classAccesses>
+        <apexClass>ContentDocumentLink_Helper</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>EinsteinAI_JWT</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -359,6 +363,10 @@
     <classAccesses>
         <apexClass>Test_Einstein_HttpMockResponses</apexClass>
         <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ikemen_Helper</apexClass>
+        <enabled>true</enabled>
     </classAccesses>
     <custom>false</custom>
     <fieldPermissions>
@@ -1649,6 +1657,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>ikemen__c.Feedback__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ikemen__c.ImageURL__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ikemen__c.Image__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
