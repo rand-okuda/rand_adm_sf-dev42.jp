@@ -1,5 +1,6 @@
 trigger ContentDistributionTrigger on ContentDistribution (after update) {
-
+    System.debug('@@@ ContentDistributionTrigger');
+    
 	list<ID> CDs = new list<ID>();
 
 	// did the view count change?  If so, we'll take a closer look

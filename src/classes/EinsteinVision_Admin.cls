@@ -1,5 +1,5 @@
 public class EinsteinVision_Admin {
-
+    
     @AuraEnabled
     public static void createDatasetFromUrl(String zipUrl) {
         System.debug('@@@ createDatasetFromUrl()');
@@ -48,11 +48,15 @@ public class EinsteinVision_Admin {
         System.debug('@@@ getImagePrediction()');
         System.debug('*** recordId ' + recordId);
         System.debug('*** datasetName ' + datasetName);
-        Blob fileBlob = getImageBlobFromFile(recordId);
+        
+        Blob fileBlob = getImageBlobFromCDLink(recordId);
+        
         EinsteinVision_PredictionService service = new EinsteinVision_PredictionService();
         EinsteinVision_Dataset[] datasets = service.getDatasets();
+        
         for (EinsteinVision_Dataset dataset : datasets) {
             if (dataset.Name.equals(datasetName)) {
+                
                 EinsteinVision_Model[] models = service.getModels(dataset);
                 EinsteinVision_Model model = models.get(0);
                 EinsteinVision_PredictionResult result = service.predictBlob(model.modelId, fileBlob, '');
@@ -65,7 +69,7 @@ public class EinsteinVision_Admin {
                 System.debug('*** result2 ' + result.probabilities[1]);
                 System.debug('*** result3 ' + result.probabilities[2]);
                 System.debug('*** probability ' + probability);
-
+                
                 ikemen__c ikemen = [SELECT Id FROM ikemen__c WHERE Id=:recordId];
                 ikemen.Judgment__c = probability.label;
                 ikemen.modelId__c = model.modelId;
@@ -92,7 +96,7 @@ public class EinsteinVision_Admin {
         String name = ikemen.Id;
         String expectedLabel = ikemen.Judgment__c;
         String modelId = ikemen.modelId__c;
-        Blob fileBlob = getImageBlobFromFile(ikemen.Id);
+        Blob fileBlob = getImageBlobFromCDLink(ikemen.Id);
         
         Einstein_PredictionService Service = new Einstein_PredictionService(Einstein_PredictionService.Types.IMAGE);
         Einstein_Example feedbackResult = Service.createFeedbackImageExample(name, expectedLabel, modelId, fileBlob);
@@ -105,8 +109,9 @@ public class EinsteinVision_Admin {
         ikemen.ExampleNum__c = feedbackResult.label.numExamples;
         
         ikemen.Feedback__c = false;
+        
         update ikemen;
-
+        
         System.debug('*** ikemen.ExampleCreatedAt__c ' + ikemen.ExampleCreatedAt__c);
         System.debug('*** ikemen.ExampleId__c ' + ikemen.ExampleId__c);
         System.debug('*** ikemen.ExampleDatasetId__c ' + ikemen.ExampleDatasetId__c);
@@ -141,14 +146,36 @@ public class EinsteinVision_Admin {
         return '';
     }
     
-    public static Blob getImageBlobFromFile(Id recordId) {
-        System.debug('@@@ getImageBlobFromFile()');
+    public static Blob getImageBlobFromCDLink(Id recordId) {
+        System.debug('@@@ getImageBlobFromCDLink()');
         List<ContentDocumentLink> cdl = [SELECT Id, LinkedEntityId, ContentDocumentId, IsDeleted, SystemModstamp, ShareType, Visibility FROM ContentDocumentLink WHERE LinkedEntityId=:recordId];
         List<ContentDocument> cd = [SELECT Id, LatestPublishedVersionId, PublishStatus, Title FROM ContentDocument WHERE Id=:cdl[0].ContentDocumentId];
         List<ContentVersion> cv = [SELECT FirstPublishLocationId, VersionData, Id, Title, IsLatest, CreatedDate FROM ContentVersion WHERE Id=:cd[0].LatestPublishedVersionId AND IsLatest=true ORDER BY CreatedDate DESC];
         if (cv.size()>0) {
             System.debug('*** cv.get(0) ' + cv.get(0));
             return cv.get(0).VersionData;
+        }
+        return null;
+    }
+    
+    public static String getImageUrlFromCDLink(Id recordId) {
+        System.debug('@@@ getImageURLFromCDLink()');
+        List<ContentDocumentLink> cdl = [SELECT Id, LinkedEntityId, ContentDocumentId, IsDeleted, SystemModstamp, ShareType, Visibility FROM ContentDocumentLink WHERE LinkedEntityId=:recordId];
+        List<ContentDocument> cd = [SELECT Id, LatestPublishedVersionId, PublishStatus, Title FROM ContentDocument WHERE Id=:cdl[0].ContentDocumentId];
+        List<ContentVersion> cv = [SELECT FirstPublishLocationId, VersionData, Id, Title, IsLatest, CreatedDate FROM ContentVersion WHERE Id=:cd[0].LatestPublishedVersionId AND IsLatest=true ORDER BY CreatedDate DESC];
+        if (cv.size()>0) {
+            Set<Id> contentVersionIdSet = new Set<Id>();
+            ContentDistribution cDist = new ContentDistribution();
+            cDist.Name = 'Auto Create By Trigger';
+            cDist.ContentVersionId = cv[0].Id;
+            cDist.PreferencesNotifyOnVisit = false;
+            contentVersionIdSet.add(cv[0].Id);
+            List<ContentDistribution> existCDistList = [SELECT Id, ContentVersionId FROM ContentDistribution WHERE ContentVersionId = :contentVersionIdSet];
+            delete existCDistList;
+            insert cDist;
+            cDist = [SELECT Id, ContentDownloadUrl FROM ContentDistribution WHERE Id=:cDist.Id];
+            System.debug('*** cDist.ContentDownloadUrl ' + cDist.ContentDownloadUrl);
+            return cDist.ContentDownloadUrl;
         }
         return null;
     }

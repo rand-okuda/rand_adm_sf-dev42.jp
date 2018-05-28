@@ -33,6 +33,14 @@
         <name>Feedback__c</name>
     </fields>
     <fields>
+        <label><!-- ImageURL --></label>
+        <name>ImageURL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Image --></label>
+        <name>Image__c</name>
+    </fields>
+    <fields>
         <label><!-- Judgment --></label>
         <name>Judgment__c</name>
     </fields>

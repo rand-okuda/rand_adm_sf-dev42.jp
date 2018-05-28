@@ -126,6 +126,29 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>ImageURL__c</fullName>
+        <externalId>false</externalId>
+        <label>ImageURL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Image__c</fullName>
+        <externalId>false</externalId>
+        <formula>IMAGE( ImageURL__c ,&apos;イケメン？&apos;, 100, 100)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Image</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Judgment__c</fullName>
         <externalId>false</externalId>
         <label>Judgment</label>
@@ -222,7 +245,9 @@
     <listViews>
         <fullName>All</fullName>
         <columns>NAME</columns>
+        <columns>Image__c</columns>
         <columns>Judgment__c</columns>
+        <columns>Feedback__c</columns>
         <columns>label01__c</columns>
         <columns>Probability01__c</columns>
         <columns>label02__c</columns>
