@@ -2040,6 +2040,10 @@
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>Tab</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>ikemen__c</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>

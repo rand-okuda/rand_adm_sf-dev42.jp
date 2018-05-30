@@ -83,6 +83,10 @@
             <section>Feedback</section>
         </sections>
         <sections>
+            <label><!-- Image --></label>
+            <section>Image</section>
+        </sections>
+        <sections>
             <label><!-- カスタムリンク --></label>
             <section>カスタムリンク</section>
         </sections>

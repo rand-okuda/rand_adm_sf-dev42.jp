@@ -1715,6 +1715,10 @@
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
+        <tab>Tab</tab>
+        <visibility>None</visibility>
+    </tabSettings>
+    <tabSettings>
         <tab>ikemen__c</tab>
         <visibility>None</visibility>
     </tabSettings>
