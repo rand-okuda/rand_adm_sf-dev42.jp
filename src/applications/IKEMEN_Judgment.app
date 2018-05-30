@@ -6,6 +6,7 @@
     <formFactors>Large</formFactors>
     <label>IKEMEN Judgment</label>
     <navType>Standard</navType>
+    <tab>Tab</tab>
     <tab>Einstein_Vision_Admin</tab>
     <tab>Einstein_Usage</tab>
     <tab>ikemen__c</tab>

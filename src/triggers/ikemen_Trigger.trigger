@@ -4,7 +4,7 @@ trigger ikemen_Trigger on ikemen__c (before update) {
     for ( Integer i=0; i<Trigger.New.size(); i++ ){
         if(Trigger.New[i].Feedback__c && Trigger.New[i].modelId__c != null && Trigger.New[i].Judgment__c != Trigger.Old[i].Judgment__c){
             System.debug('*** ikemen ' + Trigger.New[i]);
-            EinsteinVision_Admin.JudgmentFeedback(Trigger.New[i].Id);
+            ikemen_Helper.JudgmentFeedback(Trigger.New[i].Id);
         }else{
             ikemen_Helper.WriteImageUrl(Trigger.New[i]);
         }
