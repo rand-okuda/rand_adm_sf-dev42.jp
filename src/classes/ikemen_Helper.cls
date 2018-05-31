@@ -71,9 +71,7 @@ public class ikemen_Helper {
         ikemen.ExampleLabelName__c = feedbackResult.label.name;
         ikemen.ExampleLabelId__c = String.valueOf(feedbackResult.label.Id);
         ikemen.ExampleNum__c = feedbackResult.label.numExamples;
-        
-        ikemen.Feedback__c = false;
-        
+                
         update ikemen;
         
         System.debug('*** ikemen.ExampleCreatedAt__c ' + ikemen.ExampleCreatedAt__c);
