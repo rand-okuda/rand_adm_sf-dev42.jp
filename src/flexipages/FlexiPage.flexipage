@@ -23,12 +23,9 @@
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>pageSize</name>
-                <value>5</value>
+                <value>30</value>
             </componentInstanceProperties>
             <componentName>flexipage:filterListCard</componentName>
-        </componentInstances>
-        <componentInstances>
-            <componentName>EinsteinVision_Admin_UI</componentName>
         </componentInstances>
         <name>main</name>
         <type>Region</type>

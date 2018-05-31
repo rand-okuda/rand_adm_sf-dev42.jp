@@ -29,10 +29,6 @@
         <name>ExampleNum__c</name>
     </fields>
     <fields>
-        <label><!-- Feedback --></label>
-        <name>Feedback__c</name>
-    </fields>
-    <fields>
         <label><!-- ImageURL --></label>
         <name>ImageURL__c</name>
     </fields>

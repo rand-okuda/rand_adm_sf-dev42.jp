@@ -1656,11 +1656,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ikemen__c.Feedback__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>ikemen__c.ImageURL__c</field>
         <readable>false</readable>
     </fieldPermissions>
