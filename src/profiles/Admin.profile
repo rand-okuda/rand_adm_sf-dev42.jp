@@ -93,10 +93,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>EinsteinVision_Admin</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>EinsteinVision_ApiUsage</apexClass>
         <enabled>false</enabled>
     </classAccesses>
