@@ -59,7 +59,7 @@ public class ContentDocumentLink_Helper {
         System.debug('@@@ getImageURLFromCDLink()');
         List<ContentDocumentLink> cdl = [SELECT Id, LinkedEntityId, ContentDocumentId, IsDeleted, SystemModstamp, ShareType, Visibility FROM ContentDocumentLink WHERE LinkedEntityId=:recordId];
         List<ContentDocument> cd = [SELECT Id, LatestPublishedVersionId, PublishStatus, Title FROM ContentDocument WHERE Id=:cdl[0].ContentDocumentId];
-        List<ContentVersion> cv = [SELECT FirstPublishLocationId, VersionData, Id, Title, IsLatest, CreatedDate FROM ContentVersion WHERE Id=:cd[0].LatestPublishedVersionId AND IsLatest=true ORDER BY CreatedDate DESC];
+        List<ContentVersion> cv = [SELECT FirstPublishLocationId, Id, Title, IsLatest, CreatedDate FROM ContentVersion WHERE Id=:cd[0].LatestPublishedVersionId AND IsLatest=true ORDER BY CreatedDate DESC];
         if (cv.size()>0) {
             Set<Id> contentVersionIdSet = new Set<Id>();
             ContentDistribution cDist = new ContentDistribution();
