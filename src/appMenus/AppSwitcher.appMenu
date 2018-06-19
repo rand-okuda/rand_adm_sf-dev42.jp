@@ -64,4 +64,8 @@
         <name>IKEMEN_Judgment</name>
         <type>CustomApplication</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>standard__LightningInstrumentation</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
 </AppMenu>
